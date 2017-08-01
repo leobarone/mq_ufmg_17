@@ -1,9 +1,4 @@
----
-title: "Oficina de webscraping de dados Legislativos com R e XML - Atividade 1"
-author: "Leonardo Sangali Barone e Alexia Aslan"
-date: "11-03-2016"
-output: pdf_document
----
+# Tutorial 1
 
 # Pacotes no R
 

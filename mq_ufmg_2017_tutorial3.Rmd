@@ -77,7 +77,7 @@ Usaremos a função _bind\_rows_ (ou _rbind_ se estiver com problemas com o _dpl
 
 ```{r}
 library(dplyr)
-dados <- bind_rows(dados, tabela_titulos)
+dados_pesquisa <- bind_rows(dados_pesquisa, tabela_titulos)
 ```
 
 Chegou o momento de colocar dentro loop tudo o que queremos que execute em cada uma das vezes que ele ocorrer. Ou seja, que imprima na tela a página que está executando, que a URL da página de resultados seja construída com a função paste, para todas elas o código HTML seja examinado, lido no R e transformado em objeto XML, colete todos os links e todos os títulos e que "empilhe". Lembrando que não podemos esquecer de definir a URK que estamos usando e criar um data frame vazio para colocar todos os links e títulos coletados antes de iniciar o loop.
@@ -88,7 +88,7 @@ library(rvest)
 
 url_base <- "http://search.folha.uol.com.br/search?q=merenda&site=todos&results_count=3769&search_time=0.033&url=http%3A%2F%2Fsearch.folha.uol.com.br%2Fsearch%3Fq%3Dmerenda%26site%3Dtodos&sr="
 
-dados <- data_frame()
+dados_pesquisa <- data_frame()
 
 for (i in 1:151){
   
@@ -107,7 +107,7 @@ for (i in 1:151){
   
   tabela_titulos <- data.frame(titulos, links)
   
-  dados <- bind_rows(dados, tabela_titulos)
+  dados_pesquisa <- bind_rows(dados_pesquisa, tabela_titulos)
 }
 
 ```

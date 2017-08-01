@@ -20,7 +20,7 @@ No primeiro dia do curso faremos uma breve apresentação do curso, da linguagem
 
 1- Em conjunto, faremos a raspagem dos dados sobre servidores públicos federais no portal da transparência.
 
-2- A faremos, individualmente ou em pequenos grupos, o [Tutorial 1](https://github.com/leobarone/mq_ufmg_17/blob/master/mq_ufmg_2017_tutorial1.Rmd).
+2- A  seguir, faremos individualmente ou em pequenos grupos o [Tutorial 1](https://github.com/leobarone/mq_ufmg_17/blob/master/mq_ufmg_2017_tutorial1.Rmd).
 
 ### Dia 2 - 01/08/2017 - O básico da captura de páginas com R - portais de notícias
 

@@ -48,3 +48,24 @@ A seguir, vamos aprender sobre "corpus" com o pacote _tm_. Vá para o [Tutorial 
 Terminaremos com a abordagem "tidy" para texto (pacote _tidytext_), no [Tutorial 7](https://github.com/leobarone/mq_ufmg_17/blob/master/mq_ufmg_2017_tutorial7.Rmd).
 
 ## Extras e materiais de apoio
+
+
+
+## Atividade de avaliação
+
+### 1 - Resumos e nuvem de palavras de um periódico no Scielo
+
+* Escolha uma revista qualquer na [lista de periódicos brasileiros no Scielo](http://www.scielo.br/scielo.php?script=sci_alphabetic&lng=pt&nrm=iso).
+
+* Selecionado o periódico, clique na aba "todos" para acessar a tabela com todos os números da revista.
+
+* Capture os URLs para todos os números da revista. Dica: você não precisa de um "for loop" nesta etapa. Guarde os links em um vetor ou em um data frame.
+
+* A seguir, capture (em loop!) as páginas de todos os números e extraia delas os links para o resumo em português. Se algum artigo não tiver resumo em português, você pode ignorá-lo. Dica: como há muitos links na página, vale a pena capturar mais links que o desejado e selecionar aqueles que se referem apenas aos resumos em português. Os links dos resumos se distinguem pela string "script=sci_abstrac" no endereço em URL. Os links para resumos e textos em português terminam sempre com "tlng=pt". Com o pacote _stringr_ você pode excluir os links que não interessam.
+
+Exemplo: http://www.scielo.br/scielo.php?script=sci_abstract&pid=S0103-636X2017000100019&lng=pt&nrm=iso&tlng=pt
+
+* Tendo capturado os links para cada artigo, captura (em loop novamente!) os textos de cada um dos resumos em português. Dica: você pode capturar todas as tags "p" que estão juntas ao resumo e selecionar depois apenas o resumo pela posição (ou pode deixar tudo junto se for difícil separar).
+
+* Faça uma nuvem de palavras com o conteúdo dos resumos capturado.
+

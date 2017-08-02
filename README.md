@@ -47,6 +47,15 @@ A seguir, vamos aprender sobre "corpus" com o pacote _tm_. Vá para o [Tutorial 
 
 Terminaremos com a abordagem "tidy" para texto (pacote _tidytext_), no [Tutorial 7](https://github.com/leobarone/mq_ufmg_17/blob/master/mq_ufmg_2017_tutorial7.Rmd).
 
+### Dias 4 e 5 - 03/08/2017 e 04/08/2017 - Tópicos de captura de dados na internet
+
+Nos dois últimos dias do curso vamos trabalhar com tópicos avulsos e ligeiramente mais avançados de captura de dados na internet e/ou em documentos em formato .pdf. Os tópicos são independentes entre si e você pode gerenciar o seu tempo para terminar tutoriais anteriores, estudar material de apoio e avançar nos tutoriais de cada tópico. Minha única recomendação é que você não deixe de fazer o tutorial sobre formulários, pois trata-se de uma "classe" de problemas bastante comum para captura de dados.
+
+- Formulários Web - Em breve
+- [Twitter](https://github.com/leobarone/mq_ufmg_17/blob/master/mq_ufmg_2017_tutorial9.Rmd) - Pacote _twitteR para acessar a API do twitter.
+- Arquivos em formato PDF - Em breve
+- [Facebook]
+
 ## Extras e materiais de apoio
 
 Os materiais de apoio são os tutoriais do curso "FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais" que ministrei no primeiro semestre de 2017 do Departamento de Ciência Política da Universidade de São Paulo. Você pode procurar visitar a página do curso completo [aqui](https://github.com/leobarone/FLS6397).
@@ -71,7 +80,19 @@ Os materiais de apoio são os tutoriais do curso "FLS 6397 - Introdução à Pro
 
 Uma das melhores referências para estudar ciência de dados com R é o livro [R for Data Science](http://r4ds.had.co.nz/) de Grolemund e Wickham. O livro é online gratuito. Sugiro utilizá-lo como material de apoio durante o curso e é a leitura que recomendo após finalizarmos.
 
+### Captcha e Curso-R
+
+Uma fonte bastante interessante sobre R em português é o [Curso-R](http://curso-r.com), desenvolvido pelo pessoal do IME-USP. Vale a pena acompanhar.
+
+Recentemente, há uma sequência de posts sobre como quebrar captcha com R no blog, [aqui](http://curso-r.com/tags/captcha/). Sugiro a leitura para quem se deparar com captchas em uma captura de dados.
+
 ## Atividade de avaliação
+
+A avaliação do curso é composta de participação nas atividades em sala de aula e de duas atividades a serem entregues até (DATA A DEFINIR). Leia a seguir as instruções das atividades.
+
+Em cada uma das atividades você deve entregar um script que cumpre a tarefa. Os script deve conter comentários sobre cada passo.
+
+Não se preocupe em um script "que funcione". Entregue o melhor que puder e aponte em comentários dificuldades, dúvidas e problemas encontrados.
 
 ### 1 - Resumos e nuvem de palavras de um periódico no Scielo
 
@@ -89,3 +110,16 @@ Exemplo: http://www.scielo.br/scielo.php?script=sci_abstract&pid=S0103-636X20170
 
 * Faça uma nuvem de palavras com o conteúdo dos resumos capturado.
 
+### Atividade 2 - Formulário ou twitter
+
+Há três opções para esta atividade. Você precisa entregar apenas uma opção.
+
+* Opção 1 - Capturar dados via API do Twitter e construir uma visualização interessante com os dados capturados. Não é preciso seguir nenhuma instrução específica e você pode utiliar sua criatividade. Utilize o tutorial sobre captura dados no twitter como apoio. Obs: não se preocupe em enviar as "keys" de sua conta de desenvolvedor, pois posso inserir as minhas ao corrigir sua atividade. 
+
+* Opção 2 - Elaborar um código (ou função, caso saiba criar funções no R) para enviar uma requisição a um formulário na web e capturar seu resultado. Tente escolher um formulário com poucos parâmetros e priorize formulários que você consegue entender a formulários que te interessam para pesquisa ou trabalho. Novamente, as instruções são livres e você pode usar sua criatividade.
+
+* Opção 3 - Fazer download de uma quantidade grande de documentos em .pdf que não precisem de OCR (ou seja, cujo texto é reconhecido como texto e não como imagem) e transformá-lo em um corpus ou banco de dados. Novamente, instruções livres.
+
+## Créditos e agradecimentos
+
+Rogério Barbosa e Alexia Aslan contribuíram em versões anteriores deste curso ou deste material. Guilherme Andrade (2014 e 2015) e a Lucas Gelape (2017), contribuíram enormemente como assistentes nas diferentes edições deste curso.

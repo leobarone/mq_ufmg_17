@@ -1,0 +1,77 @@
+# Tutorial 8 - Formulários na web
+
+Até agora trabalhamos com exemplos nos quais retiramos informação de páginas em html, mas não enviamos nenhuma informação ao servidor com as quais estamos nos comunicando (exceto manualmente). Contudo, é muito comum nos depararmos com formulários em páginas que queremos raspar. Formulários, na maioria das vezes, aparecerão como caixas de consulta acompanhada de um botão.
+
+Mecanismos de busca (Google, DuckDuckGo, etc) têm formulários nas suas páginas iniciais. Portais de notícia têm formulários de busca (como o que usamos manualmente no caso da Folha de São Paulo)
+
+```{r}
+library(rvest)
+library(stringr)
+
+google_url <- "https://www.google.com/"
+
+google_session <- html_session(google_url)
+
+google_pagina <- read_html(google_session)
+
+google_form_list <- html_form(google_pagina)
+
+google_form <- google_form_list[[1]]
+
+google_form <- set_values(google_form,
+                          'q' = "merenda")
+
+google_submission <- submit_form(session = google_session, 
+                                 form = google_form, 
+                                 submit = "btnG")
+
+google_resultado <- read_html(google_submission)
+
+nodes_resultados <- html_nodes(google_resultado, xpath = "//h3/a")
+
+titulos <- html_text(nodes_resultados)
+links <- html_attr(nodes_resultados, name = "href")
+links <- paste0("https://www.google.com", links)
+```
+
+
+```{r}
+library(rvest)
+library(stringr)
+
+stf_url <- "http://www.stf.jus.br/portal/processo/pesquisarProcesso.asp"
+
+stf_session <- html_session(stf_url)
+
+stf_pagina <- read_html(stf_session)
+
+stf_form_list <- html_form(stf_pagina)
+
+stf_form <- stf_form_list[[3]]
+
+stf_form <- set_values(stf_form,
+                          'dropmsgoption' = 1,
+                          'numero' = "500")
+
+stf_submission <- submit_form(session = stf_session, 
+                                 form = stf_form)
+
+stf_resultado <- read_html(stf_submission)
+
+tabela_processos <- html_table(stf_resultado)[[1]]
+
+nodes_links_processos <- html_nodes(stf_resultado, xpath = "//table//a")
+
+links_processos <- html_attr(nodes_links_processos, name = "href")
+links_processos <- str_sub(links_processos, 8, str_length(links_processos))
+links_processos <- paste0("https://www.stf.jus.br/portal/processo/", links_processos)
+
+tabela_processos$links <- links_processos
+
+link_adi <- tabela_processos$links[str_detect(tabela_processos$Processo, "ADI")]
+link_adi <- "http://www.stf.jus.br/portal/processo/verProcessoAndamento.asp?incidente=4425942"
+pagina_adi <- read_html(link_adi)
+lista_tabela_adi <- html_table(pagina_adi, fill = T)
+tabela_adi <- lista_tabela_adi[[2]]
+```
+

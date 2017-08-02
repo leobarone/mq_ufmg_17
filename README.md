@@ -51,10 +51,10 @@ Terminaremos com a abordagem "tidy" para texto (pacote _tidytext_), no [Tutorial
 
 Nos dois últimos dias do curso vamos trabalhar com tópicos avulsos e ligeiramente mais avançados de captura de dados na internet e/ou em documentos em formato .pdf. Os tópicos são independentes entre si e você pode gerenciar o seu tempo para terminar tutoriais anteriores, estudar material de apoio e avançar nos tutoriais de cada tópico. Minha única recomendação é que você não deixe de fazer o tutorial sobre formulários, pois trata-se de uma "classe" de problemas bastante comum para captura de dados.
 
-- Formulários Web - Em breve
+- [Formulários Web](https://github.com/leobarone/mq_ufmg_17/blob/master/mq_ufmg_2017_tutorial8.Rmd) - Em construção
 - [Twitter](https://github.com/leobarone/mq_ufmg_17/blob/master/mq_ufmg_2017_tutorial9.Rmd) - Pacote _twitteR para acessar a API do twitter.
 - Arquivos em formato PDF - Em breve
-- [Facebook]
+- Facebook
 
 ## Extras e materiais de apoio
 
@@ -122,4 +122,4 @@ Há três opções para esta atividade. Você precisa entregar apenas uma opçã
 
 ## Créditos e agradecimentos
 
-Rogério Barbosa e Alexia Aslan contribuíram em versões anteriores deste curso ou deste material. Guilherme Andrade (2014 e 2015) e a Lucas Gelape (2017), contribuíram enormemente como assistentes nas diferentes edições deste curso.
+Rogério Barbosa e Alexia Aslan contribuíram em versões anteriores deste curso ou deste material. Agradecimentos Guilherme Andrade (2014 e 2015) e a Lucas Gelape (2017), que contribuíram enormemente como assistentes nas diferentes edições deste curso.

@@ -33,7 +33,18 @@ Finalmente, vamos contruir um banco de dados de notícias -- título, link, data
 
 É possível que não terminemos os 3 tutoriais nesta aula. Não se preocupem. Continuaremos na aula seguinte.
 
+### Dia 3 - 02/08/2017 - Mineração de texto com R - uma introdução breve
 
+Hoje vamos aprender sobre algumas maneiras de trabalharmos com texto como dado no R e conhecer 3 pacotes novos: _stringr_, _tm_ e _tidytext_.
 
+Originalmente, este material fez parte de um programa completo de programação com R. Minha expectativa é que aqueles de vocês que fizeram o curso do MQ de Introdução ao R tenham menos problemas com aspectos da linguagem que ainda não apareceram em nosso curso. Para os demais, vou indicar materiais complementares que ajudam a compreender os tutoriais de hoje.
 
+Como há vários novos aspectos da linguagem, não exitem em nos chamar para compreender aquilo que é novo ou estranho.
 
+Vamos começar com o [Tutorial 5](https://github.com/leobarone/mq_ufmg_17/blob/master/mq_ufmg_2017_tutorial5.Rmd), que introduz as funções do pacote _stringr_ e captura os dados com os quais vamos trabalhar.
+
+A seguir, vamos aprender sobre "corpus" com o pacote _tm_. Vá para o [Tutorial 6](https://github.com/leobarone/mq_ufmg_17/blob/master/mq_ufmg_2017_tutorial6.Rmd).
+
+Terminaremos com a abordagem "tidy" para texto (pacote _tidytext_), no [Tutorial 7](https://github.com/leobarone/mq_ufmg_17/blob/master/mq_ufmg_2017_tutorial7.Rmd).
+
+## Extras e materiais de apoio

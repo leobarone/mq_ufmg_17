@@ -49,7 +49,27 @@ Terminaremos com a abordagem "tidy" para texto (pacote _tidytext_), no [Tutorial
 
 ## Extras e materiais de apoio
 
+Os materiais de apoio são os tutoriais do curso "FLS 6397 - Introdução à Programação e Ferramentas Computacionais para as Ciências Sociais" que ministrei no primeiro semestre de 2017 do Departamento de Ciência Política da Universidade de São Paulo. Você pode procurar visitar a página do curso completo [aqui](https://github.com/leobarone/FLS6397).
 
+### R Básico
+
+- Para quem precisa estudar mais sobre data frames e vetores, clique [aqui](https://github.com/leobarone/FLS6397/blob/master/tutorials/tutorial1.Rmd)
+
+- Para aprender sobre as funcionalidades básicas do R, veja este [tutorial](https://github.com/leobarone/FLS6397/blob/master/tutorials/tutorial2.Rmd)
+
+- Finalmente, este terceiro [tutorial](https://github.com/leobarone/FLS6397/blob/master/tutorials/tutorial3.Rmd) trata de operadores relacionais e lógicos, cláusulas condicionais, loops e funções.
+
+### Manipulação de dados no R
+
+- Se você quer ver um pouco mais sobre abertura de dados no R, veja este [tutorial](https://github.com/leobarone/FLS6397/blob/master/tutorials/tutorial4.Rmd)
+
+- Para aprender sobre manipulação de dados com a gramática básica do R, leia este [aqui](https://github.com/leobarone/FLS6397/blob/master/tutorials/tutorial5.Rmd)
+
+- Finalmente, se quiser aprender sobre o pacote _dplyr_ faça os sobre o [básico do _dplyr_](https://github.com/leobarone/FLS6397/blob/master/tutorials/tutorial6.Rmd) e [bases de dados relacionais com dplyr](https://github.com/leobarone/FLS6397/blob/master/tutorials/tutorial7.Rmd) 
+
+### R for Data Science
+
+Uma das melhores referências para estudar ciência de dados com R é o livro [R for Data Science](http://r4ds.had.co.nz/) de Grolemund e Wickham. O livro é online gratuito. Sugiro utilizá-lo como material de apoio durante o curso e é a leitura que recomendo após finalizarmos.
 
 ## Atividade de avaliação
 

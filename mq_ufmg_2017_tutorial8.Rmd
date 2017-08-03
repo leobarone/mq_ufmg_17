@@ -2,29 +2,82 @@
 
 Até agora trabalhamos com exemplos nos quais retiramos informação de páginas em html, mas não enviamos nenhuma informação ao servidor com as quais estamos nos comunicando (exceto manualmente). Contudo, é muito comum nos depararmos com formulários em páginas que queremos raspar. Formulários, na maioria das vezes, aparecerão como caixas de consulta acompanhada de um botão.
 
-Mecanismos de busca (Google, DuckDuckGo, etc) têm formulários nas suas páginas iniciais. Portais de notícia têm formulários de busca (como o que usamos manualmente no caso da Folha de São Paulo)
+Mecanismos de busca (Google, DuckDuckGo, etc) têm formulários nas suas páginas iniciais. Portais de notícia ou de Legislativos têm formulários de busca (como o que usamos manualmente no caso da Folha de São Paulo). Por vezes, mesmo para "passar" de página nos deparamos com um formulário.
+
+Neste tutorial vamos aprender a preencher um formulário, enviá-lo ao servidor da página e capturar sua resposta.
+
+Começaremos com um exemplo simples, como o buscador da Google, e depois faremos um exercício bastante mais complexo com o STF.
+
+## _rvest_, formulários e Google 
+
+Vamos começar carregando o pacotes _rvest_
 
 ```{r}
 library(rvest)
-library(stringr)
+```
 
+Nosso primeiro passo ao lidar com formulários será estabelecer uma conexão com o servidor, antes mesmo de capturar a página na qual o formulário está. Damos a essa conexão o nome de "session", e utilizamos a função _html\_session_ para criá-la:
+
+```{r}
 google_url <- "https://www.google.com/"
 
 google_session <- html_session(google_url)
+```
 
+Estabelecida a conexão, precisamos conhecer o formulário. Começamos, obviamente, obtendo o código HTML da página do formulário. Na sequência, vamos extrair do código da página os formulários. Como tabelas em HTML, fomrulários tem suas tags próprias e contamos no pacote _rvest_ com uma função que extrai uma lista contendo todos os formulários da página:
+
+```{r}
 google_pagina <- read_html(google_session)
 
 google_form_list <- html_form(google_pagina)
 
+google_form_list
+```
+
+No caso do buscador da Google, há apenas um formulário na página. Com dois colchetes, extraímos o formulário que está na primeira posição da lista de formulários. Você verá que no caso do STF, obteremos mais de um formulário e precisaremos identificar qual queremos.
+
+```{r}
 google_form <- google_form_list[[1]]
 
+class(google_form)
+
+google_form
+```
+
+Examine o objeto que contém o formulário. Ele é um objeto da classe "form" e podemos observar todos os parâmetros que o compõe, ou seja, tudo aquilo que pode ser preenchido para envio ao servidor, ademais dos botões de submissão.
+
+Vá para o navegador e inspecione a caixa de busca da Google e os botões de busca e "Estou com sorte". Você observará que cada "campo" do formulário é uma tag "input". O atributo "type", define se será oculto ("hidden"), texto ("text") ou botão de submissão ("submit"). Por sua vez, o atributo "name" dá nome ao campo.
+
+Alguns "inputs" já contêm valores (no atributo "values"). No nosso exemplo, os botões e campos ocultos. Estes últimos jáidentificaram o idioma ("hl") e o enconding ("ie") com o qual trabalhamos.
+
+O que nos interesse preencher, obviamente, é o "input" chamado "q". Em várias ferramentas de busca, "q" (acronismo para "query") é a caixa de texto onde fazemos a busca.
+
+Vamos, então, preencher o campo "q" com a função _set\_values_:
+
+```{r}
 google_form <- set_values(google_form,
                           'q' = "merenda")
+```
 
+Simples, não? Colocamos o objeto do formulário no primeiro parâmetro da função e os campos a serem preenchidos na sequência, tal como no exemplo.
+
+Reexamine agora o formulário. Você verá que "q" está preenchido:
+
+```{r}
+google_form
+```
+
+Legal! Agora vamos fazer a submissão do formulário. No buscador da Google, há duas possibilidades de submissão. Vamos usar "Pesquisa Google" e não "Estou com sorte". Na _submit\_form_, precismos informar a sessão que criamos (conexão com o servidor), o formulário que vamos submeter e o nome do botão de submissão. Veja o exemplo: 
+
+```{r}
 google_submission <- submit_form(session = google_session, 
                                  form = google_form, 
                                  submit = "btnG")
+```
 
+Pronto! Agora basta raspar o resultado como já haviámos feito antes. A página que queremos raspar é o objeto que resulta da função _submit\_form_. Abra o resultado de uma busca no Google e tente entender o código abaixo.
+
+```{r}
 google_resultado <- read_html(google_submission)
 
 nodes_resultados <- html_nodes(google_resultado, xpath = "//h3/a")

@@ -51,9 +51,9 @@ Terminaremos com a abordagem "tidy" para texto (pacote _tidytext_), no [Tutorial
 
 Nos dois últimos dias do curso vamos trabalhar com tópicos avulsos e ligeiramente mais avançados de captura de dados na internet e/ou em documentos em formato .pdf. Os tópicos são independentes entre si e você pode gerenciar o seu tempo para terminar tutoriais anteriores, estudar material de apoio e avançar nos tutoriais de cada tópico. Minha única recomendação é que você não deixe de fazer o tutorial sobre formulários, pois trata-se de uma "classe" de problemas bastante comum para captura de dados.
 
-- [Formulários Web](https://github.com/leobarone/mq_ufmg_17/blob/master/mq_ufmg_2017_tutorial8.Rmd) - Em construção
-- [Twitter](https://github.com/leobarone/mq_ufmg_17/blob/master/mq_ufmg_2017_tutorial9.Rmd) - Pacote _twitteR para acessar a API do twitter.
-- Arquivos em formato PDF - Em breve
+- [Formulários Web](https://github.com/leobarone/mq_ufmg_17/blob/master/mq_ufmg_2017_tutorial8.Rmd) - Fomulários do buscador Google e do Andamento de processos no STF
+- [Twitter](https://github.com/leobarone/mq_ufmg_17/blob/master/mq_ufmg_2017_tutorial9.Rmd) - Pacote _twitteR_ para acessar a API do twitter.
+- [Arquivos em formato PDF](https://github.com/leobarone/mq_ufmg_17/blob/master/mq_ufmg_2017_tutorial10.Rmd) - Documentos com o texto de inteiro teor de PECs na Câmara dos Deputados
 - Facebook
 
 ## Extras e materiais de apoio

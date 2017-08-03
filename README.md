@@ -122,4 +122,4 @@ Há três opções para esta atividade. Você precisa entregar apenas uma opçã
 
 ## Créditos e agradecimentos
 
-Rogério Barbosa e Alexia Aslan contribuíram em versões anteriores deste curso ou deste material. Agradecimentos Guilherme Andrade (2014 e 2015) e a Lucas Gelape (2017), que contribuíram enormemente como assistentes nas diferentes edições deste curso.
+Rogério Barbosa e Alexia Aslan contribuíram em versões anteriores deste curso ou deste material. Agradecimentos a Guilherme Andrade (2014 e 2015) e a Lucas Gelape (2017), que contribuíram enormemente como assistentes nas diferentes edições deste curso.

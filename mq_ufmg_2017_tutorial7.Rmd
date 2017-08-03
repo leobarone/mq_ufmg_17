@@ -1,4 +1,4 @@
-# Tutorial 6 - Análise de texto no R - pacote _tidytext_
+# Tutorial 7 - Análise de texto no R - pacote _tidytext_
 
 ## Uma abordagem "tidy" para texto
 

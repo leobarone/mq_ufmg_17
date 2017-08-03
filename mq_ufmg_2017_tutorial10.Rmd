@@ -1,0 +1,51 @@
+library(rvest)
+library(pdftools)
+
+url_busca <- "http://www.camara.leg.br/buscaProposicoesWeb/resultadoPesquisa?emtramitacao=Todas&noorgao=&valueOrigem=-1&siglaorigem=&orgaoorigem=&naementa=true&indexacao=true&inteiroteor=false&tipoproposicao=%5BPEC++++++++-+Proposta+de+Emenda+%C3%A0+Constitui%C3%A7%C3%A3o%5D&dataInicialApresentacao=01/07/2017&dataFinalApresentacao=31/07/2017&partidoautor=&ufautor=&tramitacaoorgao=&partidorelator=&ufrelator=&comissaorelator=&data=03/08/2017&page=true"
+
+urls_pecs <- url_busca %>%
+  read_html() %>%
+  html_nodes(xpath = "//span[@class='titulo']/a") %>%
+  html_attr(name = 'href')
+
+
+urls_inteiro_teor <- c()
+num_pec <- c()
+for (u in urls_pecs) {
+    pagina <- read_html(u)
+    
+    inteiro_teor <- pagina %>%
+      html_nodes(xpath = "//span[@class = 'naoVisivelNaImpressao']/a[@class='rightIconified iconDetalhe linkDownloadTeor']") %>%
+      html_attr(name = 'href')
+    
+    urls_inteiro_teor <- c(urls_inteiro_teor, inteiro_teor)
+    
+    pec <- pagina %>%
+      html_nodes(xpath = "//span[@class = 'nomeProposicao']") %>%
+      html_text()
+    
+    num_pec <- c(num_pec, pec)
+}
+
+urls_inteiro_teor <- paste0("http://www.camara.gov.br/proposicoesWeb/",
+                            urls_inteiro_teor)
+
+num_pec <- num_pec %>%
+  str_replace("/", "_") %>%
+  str_replace(" ", "") %>%
+  str_c(".pdf")
+
+for (i in 1:10){
+  download.file(urls_inteiro_teor[i], 
+                num_pec), 
+                mode = 'wb')
+}
+
+pdf_text(num_pec[1]) %>%
+  paste0(collapse = "")
+
+lista_textos <- list() 
+for (i in 1:10){
+  lista_textos[[i]] <- pdf_text(num_pec[i]) %>%
+    paste0(collapse = "")
+}

@@ -161,7 +161,7 @@ str(discursos_df)
 E repetir o processo, com a diferença que utilizamos _DataframeSource_ para indicar a fonte dos dados:
 
 ```{r}
-discursos_df_source <- DataframeSource(discursos_df[,2])
+discursos_df_source <- DataframeSource(discursos_df)
 discursos_df_corpus <- VCorpus(discursos_df_source)
 ```
 

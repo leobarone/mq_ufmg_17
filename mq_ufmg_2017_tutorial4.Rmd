@@ -110,7 +110,7 @@ Usando a função _download.file_, rapidamente salvamos o link no "working direc
 
 ```{r}
 getwd()
-download.file(link_pdf, "pesquisa.pdf")
+download.file(link_pdf, "pesquisa.pdf", mode = 'wb')
 ```
 
 Vá ao "working directory" e veja o arquivo!

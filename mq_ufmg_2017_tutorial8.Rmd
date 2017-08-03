@@ -10,7 +10,7 @@ Começaremos com um exemplo simples, como o buscador da Google, e depois faremos
 
 ## _rvest_, formulários e Google 
 
-Vamos começar carregando o pacotes _rvest_
+Vamos começar carregando o pacotes _rvest_:
 
 ```{r}
 library(rvest)
@@ -87,11 +87,11 @@ links <- html_attr(nodes_resultados, name = "href")
 links <- paste0("https://www.google.com", links)
 ```
 
+## Obtendo informações sobre processos no STF
+
+
 
 ```{r}
-library(rvest)
-library(stringr)
-
 stf_url <- "http://www.stf.jus.br/portal/processo/pesquisarProcesso.asp"
 
 stf_session <- html_session(stf_url)
@@ -100,31 +100,50 @@ stf_pagina <- read_html(stf_session)
 
 stf_form_list <- html_form(stf_pagina)
 
+stf_form_list
+```
+
+```{r}
 stf_form <- stf_form_list[[3]]
 
+stf_form
+```
+
+```{r}
 stf_form <- set_values(stf_form,
                           'dropmsgoption' = 1,
                           'numero' = "500")
+```
 
+```{r}
 stf_submission <- submit_form(session = stf_session, 
                                  form = stf_form)
+```
 
+```{r}
 stf_resultado <- read_html(stf_submission)
 
 tabela_processos <- html_table(stf_resultado)[[1]]
+```
 
+
+```{r}
 nodes_links_processos <- html_nodes(stf_resultado, xpath = "//table//a")
-
 links_processos <- html_attr(nodes_links_processos, name = "href")
+```
+
+```{r}
+library(stringr)
 links_processos <- str_sub(links_processos, 8, str_length(links_processos))
 links_processos <- paste0("https://www.stf.jus.br/portal/processo/", links_processos)
 
 tabela_processos$links <- links_processos
-
 link_adi <- tabela_processos$links[str_detect(tabela_processos$Processo, "ADI")]
-link_adi <- "http://www.stf.jus.br/portal/processo/verProcessoAndamento.asp?incidente=4425942"
+```
+
+
+```{r}
 pagina_adi <- read_html(link_adi)
 lista_tabela_adi <- html_table(pagina_adi, fill = T)
 tabela_adi <- lista_tabela_adi[[2]]
 ```
-

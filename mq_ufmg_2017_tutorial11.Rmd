@@ -1,0 +1,16 @@
+install.packages("Rfacebook")
+library(Rfacebook)
+
+app_id <- "888"
+app_secret <- "888"
+  
+fb_oauth <- fbOAuth(app_id = app_id, 
+                    app_secret = ,
+                    extended_permissions = TRUE)
+save(fb_oauth, file="fb_oauth")
+load("fb_oauth")
+
+token <- 'EAACEdEose0cBADiLg6XuaVhLsiWfZADRX2lPR1UPYsZC48wapF0jaohw0B836QIQSGgNXUs6plGxERr3ZCo6Nj7dUTCgoSuBcVkX3SZBklRKx31ArYpk7VKZBakclloGeed8IScxxJPG33odZBX4ZAc1ZCCuNSe8adYwk1alQnELIuoNuhfUbqdmDZAFqtmSZBmfoZD'
+me <- getUsers("me",token=fb_oauth)
+page <- getPage("IFeakingLoveScience", token, n = 50)
+group <- getGroup("1410023525939155", token, n=50)

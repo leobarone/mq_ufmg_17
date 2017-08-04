@@ -1,8 +1,8 @@
-#Tutorial 10 - Arquivos em formato .pdf no R
+# Tutorial 10 - Arquivos em formato .pdf no R
 
 Boa parte da informação disponibilizada por governos ou oganizações empresariais na internet está em formato .pdf. Neste tutorial vamos ver como obter textos contidos em um documento neste formato e treinar um exemplo que combina webscraping e arquivos em .pdf com dados da Câmara dos Deputados.
 
-Finalmente, vamos ver como converter arquivos de .pdf digitalizados, ou seja, que são imagens de texto, em objetos do R com o pacote _tessaract_.
+Finalmente, vamos ver como converter arquivos de .pdf digitalizados, ou seja, que são imagens de texto, em objetos do R com o pacote _tesseract_ (ainda não está disponível).
 
 ## Pacote _pdftools_
 
